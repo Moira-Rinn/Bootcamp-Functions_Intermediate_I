@@ -1,3 +1,5 @@
+# 1. Update Values in Dictionaries and Lists:
+
 x = [[5, 2, 3], [10, 8, 9]]
 students = [
     {'first_name':  'Michael', 'last_name': 'Jordan'},
@@ -9,7 +11,7 @@ sports_directory = {
 }
 z = [{'x': 10, 'y': 20}]
 
-# 1. Change the value 10 in x to 15. Once you're done, x should now be [ [5,2,3], [15,8,9] ].
+# 1-1. Change the value 10 in x to 15. Once you're done, x should now be [ [5,2,3], [15,8,9] ].
 
 
 def swapTen():
@@ -22,7 +24,7 @@ def swapTen():
 
 print(swapTen())
 
-# 2. Change the last_name of the first student from 'Jordan' to 'Bryant'.
+# 1-2. Change the last_name of the first student from 'Jordan' to 'Bryant'.
 
 
 def swapName():
@@ -34,7 +36,7 @@ def swapName():
 
 print(swapName())
 
-# 3. In the sports_directory, change 'Messi' to 'Andres'.
+# 1-3. In the sports_directory, change 'Messi' to 'Andres'.
 
 
 def swapName():
@@ -48,7 +50,7 @@ def swapName():
 
 print(swapName())
 
-# 4. Change the value 20 in z to 30
+# 1-4. Change the value 20 in z to 30
 
 
 def swapVal():
@@ -62,3 +64,64 @@ def swapVal():
 
 
 print(swapVal())
+
+# 2. Iterate Through a List of Dictionaries:
+
+students = [
+    {'first_name':  'Michael', 'last_name': 'Jordan'},
+    {'first_name': 'John', 'last_name': 'Rosales'},
+    {'first_name': 'Mark', 'last_name': 'Guillen'},
+    {'first_name': 'KB', 'last_name': 'Tonel'}
+]
+
+
+def iterateDictionary():
+    for x in range(len(students)):
+        for entry in students[x]:
+            print(f"{entry} - {students[x][entry]}")
+
+
+iterateDictionary()
+
+
+def iterateDictionary():
+    for x in range(len(students)):
+        item = ""
+        cnt = 0
+        for key in students[x].keys():
+            if cnt < len(students[x])-1:
+                item += f"{key} - {students[x][key]}, "
+            else:
+                item += f"{key} - {students[x][key]}"
+            cnt += 1
+        print(item)
+
+
+iterateDictionary()
+
+# 3. Get Values From a List of Dictionaries:
+
+
+def iterateDictionary2(key, students):
+    for student in students:
+        print(student[key])
+
+
+iterateDictionary2('last_name', students)
+
+# 4. Iterate Through a Dictionary with List Values:
+
+dojo = {
+    'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+
+
+def printInfo(dic):
+    for entry in dic:
+        print(f"{len(dic[entry])} {entry.upper()}")
+        for x in range(len(dic[entry])):
+            print(dic[entry][x])
+
+
+printInfo(dojo)
